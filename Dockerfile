@@ -6,13 +6,11 @@ ENV WIREMOCK_VERSION 2.24.1
 
 RUN apk add --update openssl && \
   apk add --no-cache 'su-exec>=0.2' bash  && \
-  mkdir -p /var/wiremock/lib/ && \
+  mkdir -p /home/wiremock && \
   wget https://repo1.maven.org/maven2/com/github/tomakehurst/wiremock-jre8-standalone/$WIREMOCK_VERSION/wiremock-jre8-standalone-$WIREMOCK_VERSION.jar \
     -O /home/wiremock-jre8-standalone.jar
 
 WORKDIR /home/wiremock
-
-COPY ./src /home/wiremock
 
 VOLUME /home/wiremock
 
