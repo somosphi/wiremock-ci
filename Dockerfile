@@ -16,4 +16,4 @@ VOLUME /home/wiremock
 
 EXPOSE 8080 8443
 
-CMD java -jar /home/wiremock-jre8-standalone.jar --root-dir="/home/wiremock"
+CMD java -jar /home/wiremock-jre8-standalone.jar --root-dir="/home/wiremock" --global-response-templating --local-response-templating
